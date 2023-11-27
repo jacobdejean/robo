@@ -1,0 +1,7 @@
+node_modules/
+database.sqlite
+database.sqlite-shm
+database.sqlite-wal
+playwright-report/
+screenshots/
+.DS_Store
