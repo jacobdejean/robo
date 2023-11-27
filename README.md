@@ -1,8 +1,8 @@
 # robo
 
-A web crawling robot. This project is in very early stages. Eventually, I intend to transform this into a system that lets you create multiple robots each with its own goal and process. They could travel together, or as a group. There is no clean or practical code pattern implemented yet.
+A web crawling robot. This project is in a very early stage. Eventually, I intend to transform this into a system that lets you create multiple robots each with its own goal and process. They could travel together, or as a group. There is no clean or practical code pattern implemented yet.
 
-Currently this is just a personal proof of concept that navigates to a starting url, then recursively screenshots every link on that page up to a maximum depth. It also currently utilizes a local sqlite database for storing the captures. Once this api is abstracted into a library, this screenshotting functionality will be moved to its own 'robo'.
+Currently this is just a personal proof of concept that navigates to a starting url, then recursively screenshots every link on that page up to a maximum depth. It also utilizes a local sqlite database for storing the captures. Once this api is abstracted into a library, this screenshotting functionality will be moved to its own 'robo'.
 
 ## Usage
 
