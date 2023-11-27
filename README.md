@@ -1,15 +1,17 @@
 # robo
 
-To install dependencies:
+A web crawling robot. This project is in very early stages. Eventually, I intend to transform this into a system that lets you create multiple robots each with its own goal and process. They could travel together, or as a group. There is no clean or practical code pattern implemented yet.
+
+Currently this is just a personal proof of concept that navigates to a starting url, then recursively screenshots every link on that page up to a maximum depth. It also currently utilizes a local sqlite database for storing the captures. Once this api is abstracted into a library, this screenshotting functionality will be moved to its own 'robo'.
+
+## Usage
+
+Robo is built on a Playwright test, so it has a great api for interacting with webpages and runs on real browser instances. At the moment the tests run on WebKit, but Playwright can easily be configured to use Chrome or Firefox instead.
 
 ```bash
-bun install
+bunx playwright test
 ```
 
-To run:
+## License
 
-```bash
-bun run source/index.ts
-```
-
-This project was created using `bun init` in bun v[5:0]u8@1051edc56. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+[MIT](https://choosealicense.com/licenses/mit/)
