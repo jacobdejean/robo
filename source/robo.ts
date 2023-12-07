@@ -2,6 +2,7 @@ import { Page } from '@playwright/test'
 import { captures } from './database/schema'
 import yeast from 'yeast'
 import { NewCapture, Database } from './types'
+import { eq } from 'drizzle-orm'
 
 const getLinks = async (url: string) => {
 	url = trim(url)
@@ -78,11 +79,15 @@ const routine = async (page: Page, db: Database, url: string) => {
 
 		console.log(`Saving capture ${capture.uid}`)
 
-		await insertCapture(capture)
+		await insertCapture(db, capture)
+	}
+
+	return {
+		error: false
 	}
 }
 
-const insertCapture = async (capture: NewCapture) => {
+const insertCapture = async (db: Database, capture: NewCapture) => {
 	await db.insert(captures).values(capture)
 }
 
@@ -91,7 +96,5 @@ function extractLinks(html: string, url: string) {
 	const links = matches.map(link => link.match(/href="([^"]+)"/)![1] ?? '')
 	return links
 }
-
-async function asfd() {}
 
 export default routine

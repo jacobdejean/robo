@@ -10,7 +10,7 @@ export default defineConfig({
 	use: {
 		trace: 'on-first-retry'
 	},
-	timeout: 120000,
+	timeout: 678000,
 	projects: [
 		{
 			name: 'webkit',
